@@ -1,0 +1,64 @@
+:root {
+  /* cor fonte para uso em fundo light (branco) */
+  --font-color-bg-light: #333333;
+
+  /* cor fonte para uso em fundo cor primaria (amarelo) */
+  --font-color-bg-primary: #764701;
+
+  --primary-color: #ffbb11;
+
+  --radius: 6px;
+}
+
+*,
+*:after,
+*::before {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-family: helvetica;
+  color: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  /* padding referente ao navbar que é fixed top */
+  padding-top: 66px;
+}
+
+/* FONTES */
+@font-face {
+  font-family: "helvetica";
+  src: url(./assets/fonts/helvetica/Helvetica.ttf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "spectral";
+  src: url(./assets/fonts/spectral/Spectral-Regular.ttf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.helvetica {
+  font-family: helvetica, Arial, sans-serif;
+}
+
+.spectral {
+  font-family: spectral;
+}
+
+/*  imagens */
+img[src$=".jpg"][src$=".jpeg"][src$=".png"] {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  object-fit: cover;
+}
