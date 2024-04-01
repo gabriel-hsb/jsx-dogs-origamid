@@ -1,6 +1,6 @@
 import ProfileSvg from "../../../assets/images/icons/usuario.svg?react";
 
-import styles from "./ProfileLink.module.scss";
+import styles from "./ButtonProfileLink.module.scss";
 
 const ProfileLink = () => {
   return (

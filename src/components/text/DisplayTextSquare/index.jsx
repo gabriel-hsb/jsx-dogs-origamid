@@ -1,8 +1,8 @@
-import * as S from "./DisplayTextStyled.Styles";
+import * as S from "./DisplayTextSquare.Styles";
 
 // eslint-disable-next-line react/prop-types
-const DisplayTextStyled = ({ children }) => {
+const DisplayTextSquare = ({ children }) => {
   return <S.StyledDisplay className="spectral">{children}</S.StyledDisplay>;
 };
 
-export default DisplayTextStyled;
+export default DisplayTextSquare;

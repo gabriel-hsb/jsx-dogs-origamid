@@ -1,8 +1,12 @@
 import DogLoginImg from "../../assets/images/photos/login.jpg";
-import TextInput from "../../components/inputs/TextInput";
-import DisplayTextStyled from "../../components/text/DisplayTextStyled";
+import DisplayTextSquare from "../../components/text/DisplayTextSquare";
+
+import TextInput from "../../components/form/Input";
 
 import * as S from "./Login.Styles";
+import SimpleButton from "../../components/form/SimpleButton";
+import TextUnderline from "../../components/text/TextUnderline";
+import DisplayTextRect from "../../components/text/DisplayTextRect";
 
 const Login = () => {
   return (
@@ -10,9 +14,25 @@ const Login = () => {
       <S.LoginImg>
         <img src={DogLoginImg} />
       </S.LoginImg>
-      <S.LoginInfos>
-        <DisplayTextStyled>Login</DisplayTextStyled>
-        <TextInput  />
+      <S.LoginInfos className="animeLeft">
+        <DisplayTextSquare>Login</DisplayTextSquare>
+        <form>
+          <TextInput
+            id={"user"}
+            label={"Nome de usuário"}
+            type={"text"}
+            required
+          />
+          <TextInput
+            id={"password"}
+            label={"Senha"}
+            type={"password"}
+            required
+          />
+          <SimpleButton> Entrar </SimpleButton>
+        </form>
+        <TextUnderline>Esqueceu a senha?</TextUnderline>
+        <DisplayTextRect>teste</DisplayTextRect>
       </S.LoginInfos>
     </S.LoginContainer>
   );

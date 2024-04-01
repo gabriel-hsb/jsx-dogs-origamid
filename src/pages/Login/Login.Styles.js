@@ -4,7 +4,8 @@ export const LoginContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 5fr;
   align-items: center;
-  gap: 1rem;
+  gap: 2.5rem;
+  padding-right: 200px;
 `;
 
 export const LoginImg = styled.div`
@@ -14,4 +15,6 @@ export const LoginImg = styled.div`
   }
 `;
 
-export const LoginInfos = styled.div``;
+export const LoginInfos = styled.div`
+
+`;

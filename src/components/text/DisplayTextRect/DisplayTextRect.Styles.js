@@ -6,12 +6,14 @@ export const StyledDisplay = styled.h2`
   color: var(--font-color-bg-light);
   position: relative;
   line-height: 1;
+  text-transform: capitalize;
+
   &::after {
     content: "";
     display: block;
     width: 1.5rem;
-    height: 1.5rem;
-    background: var(--primary-color);
+    height: 0.5rem;
+    background: var(--secondary-color);
     position: absolute;
     bottom: 5px;
     left: -5px;

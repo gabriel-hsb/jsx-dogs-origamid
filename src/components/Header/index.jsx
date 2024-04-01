@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import ProfileLink from "../buttons/ProfileLink";
+import ButtonProfileLink from "../form/ButtonProfileLink";
 import DogsLogoSvg from "../../assets/images/icons/dogs.svg?react";
 
 import * as S from "./Header.Syles";
@@ -13,7 +13,7 @@ const Header = () => {
           <DogsLogoSvg />
         </NavLink>
         <NavLink to="login">
-          <ProfileLink />
+          <ButtonProfileLink />
         </NavLink>
       </S.NavBar>
     </S.Header>
