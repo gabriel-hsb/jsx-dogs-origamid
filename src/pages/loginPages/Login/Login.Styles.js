@@ -31,6 +31,6 @@ export const LoginInfos = styled.div`
 
   @media (width <= 768px) {
     margin: 0 auto;
-    padding-inline: 2rem
+    padding-block: 2.5rem;
   }
 `;

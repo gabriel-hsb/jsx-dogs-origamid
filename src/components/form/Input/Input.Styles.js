@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-
-
 export const TextLabelFor = styled.label`
   display: block;
   font-size: 1.125 rem;
@@ -13,7 +11,7 @@ export const TextInput = styled.input`
   border-radius: var(--radius);
   background-color: #eee;
   height: 2.6rem;
-  padding-inline: 0.5rem;
+  padding-inline: 1rem;
   width: 28rem;
   border: 1px solid #eec1;
   border-color: #eec1;
@@ -24,5 +22,9 @@ export const TextInput = styled.input`
   &:focus {
     background-color: #fff;
     border-color: var(--primary-color);
+  }
+
+  @media (width <= 768px) {
+    width: 20rem;
   }
 `;

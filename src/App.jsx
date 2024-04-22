@@ -5,6 +5,9 @@ import Login from "./pages/loginPages/Login";
 
 import "./styles.css";
 import Footer from "./components/Footer";
+import Conta from "./pages/contaPages/Conta";
+import SrcNotFound from "./pages/SrcNotFound";
+import HomeFeed from "./pages/HomeFeed";
 
 function App() {
   return (
@@ -12,9 +15,10 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          {/* <Route path="/" element={<HomeFeed />} /> */}
+          <Route path="/" element={<HomeFeed />} />
           <Route path="login/*" element={<Login />} />
-          <Route path="conta/*" element={<Login />} />
+          <Route path="conta/*" element={<Conta />} />
+          <Route path="/*" element={<SrcNotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>

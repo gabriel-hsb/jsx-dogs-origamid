@@ -17,4 +17,8 @@ export const StyledDisplay = styled.h2`
     border-radius: 0.2rem;
     z-index: -1;
   }
+
+  @media (width <= 768px) {
+    font-size: 2.5rem;
+  }
 `;
