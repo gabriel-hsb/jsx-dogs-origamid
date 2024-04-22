@@ -9,10 +9,13 @@ import Conta from "./pages/contaPages/Conta";
 import SrcNotFound from "./pages/SrcNotFound";
 import HomeFeed from "./pages/HomeFeed";
 
+import ScrollToTop from "./scripts/scrollToTop";
+
 function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<HomeFeed />} />
