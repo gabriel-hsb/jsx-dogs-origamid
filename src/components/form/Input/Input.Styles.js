@@ -14,7 +14,7 @@ export const TextInput = styled.input`
   background-color: #eee;
   height: 2.6rem;
   padding-inline: 0.5rem;
-  width: 100%;
+  width: 28rem;
   border: 1px solid #eec1;
   border-color: #eec1;
   outline: transparent;
@@ -24,7 +24,5 @@ export const TextInput = styled.input`
   &:focus {
     background-color: #fff;
     border-color: var(--primary-color);
-    /* box-shadow: 0px 0px 18px 9px rgba(255, 187, 17, 0.44),
-      100px 6px 0px -189px rgba(255, 187, 17, 0.06); */
   }
 `;

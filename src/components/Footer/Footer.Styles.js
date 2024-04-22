@@ -8,4 +8,8 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+
+  p {
+    color: var(--font-color-bg-primary)
+  }
 `;

@@ -8,6 +8,8 @@
   --primary-color: #ffbb11;
   --primary-color-darken: #dba620;
 
+  --secondary-color: #ddd;
+
   --radius: 6px;
 
   --transition-fast: all 0.4s;
@@ -33,6 +35,10 @@
 body {
   /* padding referente ao navbar que é fixed top */
   padding-top: 66px;
+}
+
+p {
+  color: var(--font-color-bg-light);
 }
 
 /* FONTES */
