@@ -1,3 +1,5 @@
+// uses useEffect to scroll to top whenever a route is changed
+
 // https://stackoverflow.com/questions/36904185/react-router-scroll-to-top-on-every-transition
 
 import { useEffect } from "react";
