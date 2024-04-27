@@ -5,7 +5,7 @@ import * as S from "./ContaPostar.Styles";
 
 const ContaPostar = () => {
   return (
-    <S.PostForm>
+    <S.PostForm className="animeLeft">
       <TextInput id={"nome"} label={"Nome do Dog"} type={"text"} required />
 
       <TextInput

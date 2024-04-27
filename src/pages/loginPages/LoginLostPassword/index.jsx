@@ -7,7 +7,7 @@ import * as S from './LoginLostPassword.Styles'
 
 const LoginLostPassword = () => {
   return (
-    <S.LoginLostPasswordContainer className="anime-left">
+    <S.LoginLostPasswordContainer className="animeLeft">
       <DisplayTextSquare>Perdeu a senha?</DisplayTextSquare>
       <form>
         <TextInput id={"mail"} label={"Digite o nome de usuário ou e-mail"} type={"text"} required />

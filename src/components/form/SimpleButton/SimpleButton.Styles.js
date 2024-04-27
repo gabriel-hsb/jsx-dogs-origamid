@@ -16,4 +16,10 @@ export const SimpleButton = styled.button`
   &:focus-visible {
     cursor: pointer;
   }
+
+  &:disabled {
+    color: var(--primary-color-darken);
+    cursor: default;
+    box-shadow: none;
+  }
 `;

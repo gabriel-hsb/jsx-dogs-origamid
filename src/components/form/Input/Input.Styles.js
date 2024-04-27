@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
+export const InputContainer = styled.div`
+  margin-top: 0.8rem;
+`;
+
 export const TextLabelFor = styled.label`
   display: block;
   font-size: 1.125 rem;
-  padding-block: 0.8rem;
+  padding-block: 0.5rem;
   color: var(--font-color-bg-light);
 `;
 

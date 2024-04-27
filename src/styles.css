@@ -1,8 +1,8 @@
 :root {
-  /* cor fonte para uso em fundo light (branco) */
+  /* use when background is light */
   --font-color-bg-light: #333;
 
-  /* cor fonte para uso em fundo cor primaria (amarelo) */
+  /* use when background is primary color (yellow) */
   --font-color-bg-primary: #764701;
 
   --primary-color: #ffbb11;
@@ -33,7 +33,7 @@
 }
 
 body {
-  /* padding referente ao navbar que é fixed top */
+  /* padding refers to header height */
   padding-top: 66px;
 }
 
@@ -41,7 +41,7 @@ p {
   color: var(--font-color-bg-light);
 }
 
-/* FONTES */
+/* FONTS */
 @font-face {
   font-family: "helvetica";
   src: url(./assets/fonts/helvetica/Helvetica.ttf) format("opentype");
@@ -64,7 +64,7 @@ p {
   font-family: spectral;
 }
 
-/*  imagens */
+/*  IMAGES */
 img[src$=".jpg"][src$=".jpeg"][src$=".png"] {
   border: 0;
   margin: 0;
@@ -86,7 +86,7 @@ img[src$=".jpg"][src$=".jpeg"][src$=".png"] {
   box-shadow: 0px 0px 0px 5px rgba(221, 221, 221, 0.4);
 }
 
-/* ANIMAÇÕES */
+/* ANIMATIONS */
 
 .animeLeft {
   opacity: 0;

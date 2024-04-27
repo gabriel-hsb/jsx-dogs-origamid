@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { UserContext } from "../../../UserContext";
+
 import SquareButtonIcon from "../../../components/form/SquareButtonIcon";
 import DisplayTextSquare from "../../../components/text/DisplayTextSquare";
 
@@ -11,9 +14,10 @@ import { Routes, Route, NavLink } from "react-router-dom";
 import ContaPostar from "../ContaPostar";
 
 const Conta = () => {
-  return (
-    <S.ContaContainer className="anime-left">
+  const { userLogout } = useContext(UserContext);
 
+  return (
+    <S.ContaContainer className="animeLeft">
       <S.ContaHeader>
         <DisplayTextSquare>Minha Conta</DisplayTextSquare>
         <S.ContaNavbar>
@@ -35,15 +39,15 @@ const Conta = () => {
             </SquareButtonIcon>
           </NavLink>
 
-          <SquareButtonIcon>
+          <SquareButtonIcon onClick={userLogout} >
             <LogOut />
           </SquareButtonIcon>
         </S.ContaNavbar>
       </S.ContaHeader>
 
       <Routes>
-        <Route path="" />
-        <Route path="estatisticas" />
+        {/* <Route path="" /> */}
+        {/* <Route path="estatisticas" /> */}
         <Route path="postar" element={<ContaPostar />} />
       </Routes>
     </S.ContaContainer>

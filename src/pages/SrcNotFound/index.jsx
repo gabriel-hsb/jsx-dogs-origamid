@@ -4,7 +4,7 @@ import * as S from "./SrcNotFound.Styles";
 
 const SrcNotFound = () => {
   return (
-    <S.NotFoundContainer>
+    <S.NotFoundContainer className="animeLeft">
       <DisplayTextSquare>Erro 404</DisplayTextSquare>
       <p>Página não encontrada</p>
     </S.NotFoundContainer>

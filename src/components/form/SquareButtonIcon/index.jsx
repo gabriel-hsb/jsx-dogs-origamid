@@ -1,9 +1,11 @@
 import * as S from "./SquareButtonIcon.Styles";
 
 // eslint-disable-next-line react/prop-types
-const SquareButtonIcon = ({ children }) => {
+const SquareButtonIcon = ({ children, ...restProps }) => {
   return (
-    <S.SquareButtonIcon className="shadow-secondary-color">{children}</S.SquareButtonIcon>
+    <S.SquareButtonIcon className="shadow-secondary-color" {...restProps}>
+      {children}
+    </S.SquareButtonIcon>
   );
 };
 

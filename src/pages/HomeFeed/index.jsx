@@ -1,9 +1,7 @@
-import DisplayTextSquare from "../../components/text/DisplayTextSquare"
+import DisplayTextSquare from "../../components/text/DisplayTextSquare";
 
 const HomeFeed = () => {
-  return (
-    <DisplayTextSquare>HomeFeed</DisplayTextSquare>
-  )
-}
+  return <DisplayTextSquare className="animeLeft">HomeFeed</DisplayTextSquare>;
+};
 
 export default HomeFeed;

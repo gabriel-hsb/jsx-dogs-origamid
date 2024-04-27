@@ -12,7 +12,7 @@ const TextInput = ({
   ...restProps
 }) => {
   return (
-    <div>
+    <S.InputContainer>
       <S.TextLabelFor htmlFor={id}> {label} </S.TextLabelFor>
       <S.TextInput
         className="shadow-primary"
@@ -26,7 +26,7 @@ const TextInput = ({
 
       {/* TODO: add styled component to input error message */}
       {error && <p style={{ color: "red" }}> {error} </p>}
-    </div>
+    </S.InputContainer>
   );
 };
 
