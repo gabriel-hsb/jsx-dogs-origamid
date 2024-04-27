@@ -9,7 +9,7 @@ import DogsLogoSvg from "../../assets/images/icons/dogs.svg?react";
 import * as S from "./Header.Syles";
 
 const Header = () => {
-  const { data } = useContext(UserContext);
+  const { data, isLoading } = useContext(UserContext);
 
   return (
     <S.Header>
@@ -23,7 +23,7 @@ const Header = () => {
           </NavLink>
         ) : (
           <NavLink to="login">
-            <ButtonProfileLink>Entrar / Cadastrar</ButtonProfileLink>
+            <ButtonProfileLink>{isLoading ? "Carregando..." : "Entrar / Cadastrar"}</ButtonProfileLink>
           </NavLink>
         )}
       </S.NavBar>

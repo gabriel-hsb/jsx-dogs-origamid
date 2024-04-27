@@ -47,9 +47,9 @@ const LoginWelcome = () => {
           {...userPassword}
         />
         <SimpleButton disabled={isLoading}>
-          {" "}
           {isLoading ? "Entrando..." : "Entrar"}
         </SimpleButton>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
 
       <NavLink to="perdeusenha">

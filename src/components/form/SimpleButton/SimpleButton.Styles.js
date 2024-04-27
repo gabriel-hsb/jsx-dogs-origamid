@@ -19,7 +19,7 @@ export const SimpleButton = styled.button`
 
   &:disabled {
     color: var(--primary-color-darken);
-    cursor: default;
+    cursor: progress;
     box-shadow: none;
   }
 `;

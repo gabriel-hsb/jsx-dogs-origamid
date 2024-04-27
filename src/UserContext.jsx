@@ -1,7 +1,7 @@
 import { createContext, useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { TOKEN_POST, USER_GET } from "./scripts/apiBackend";
+import { TOKEN_POST, USER_GET, TOKEN_VALIDATE_POST } from "./scripts/apiBackend";
 
 export const UserContext = createContext();
 
@@ -43,7 +43,7 @@ export const UserStorage = ({ children }) => {
       const { url, options } = TOKEN_POST({ username, password });
       const tokenRes = await fetch(url, options);
       // if token is not ok, throws error received from api
-      if (!tokenRes.ok) throw new Error(`Error: ${tokenRes.statusText}`);
+      if (!tokenRes.ok) throw new Error('Usuário inválido');
 
       const { token } = await tokenRes.json();
       window.localStorage.setItem("token", token);
@@ -75,14 +75,14 @@ export const UserStorage = ({ children }) => {
           await getUser(token);
         } catch (err) {
           // if there is not a token, logs out
-          // userLogout();
+          userLogout();
         } finally {
           setIsLoading(false);
         }
       }
     }
     autoLogin();
-  }, [userLogout]);
+  }, []);
 
   useEffect(() => {
     console.log(isLogged);
