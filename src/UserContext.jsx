@@ -84,10 +84,6 @@ export const UserStorage = ({ children }) => {
     autoLogin();
   }, []);
 
-  useEffect(() => {
-    console.log(isLogged);
-  }, [isLogged]);
-
   return (
     <UserContext.Provider
       value={{

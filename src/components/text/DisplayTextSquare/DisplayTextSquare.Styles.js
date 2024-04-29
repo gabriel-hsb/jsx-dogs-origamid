@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledDisplay = styled.h2`
+export const StyledDisplay = styled.h1`
   font-family: spectral;
   font-weight: 700;
   font-size: 3rem;

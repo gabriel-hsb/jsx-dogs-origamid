@@ -9,9 +9,9 @@ import SimpleButton from "../../../components/form/SimpleButton";
 import TextUnderline from "../../../components/text/TextUnderline";
 import DisplayTextRect from "../../../components/text/DisplayTextRect";
 import TextInput from "../../../components/form/Input";
+import DangerText from "../../../components/text/DangerText";
 
 import * as S from "./LoginWelcome.Styles";
-import DangerText from "../../../components/text/DangerText";
 
 const LoginWelcome = () => {
   const userName = useForm();
@@ -51,7 +51,7 @@ const LoginWelcome = () => {
           <SimpleButton disabled={isLoading}>
             {isLoading ? "Entrando..." : "Entrar"}
           </SimpleButton>
-          {error && <p style={{ color: "red" }}>{error}</p>}
+          {error && <DangerText>{error}</DangerText>}
         </S.LoginButonError>
       </form>
 
