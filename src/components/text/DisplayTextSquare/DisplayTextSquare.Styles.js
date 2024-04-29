@@ -23,5 +23,9 @@ export const StyledDisplay = styled.h2`
 
   @media (width <= 768px) {
     font-size: 2.5rem;
+    &::after {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
   }
 `;
