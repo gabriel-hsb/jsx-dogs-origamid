@@ -12,6 +12,7 @@ import Conta from "./pages/contaPages/Conta";
 import SrcNotFound from "./pages/SrcNotFound";
 
 import "./styles.css";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -23,7 +24,13 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeFeed />} />
             <Route path="login/*" element={<Login />} />
-            <Route path="conta/*" element={<Conta />} />
+
+            <Route path="conta/*" element={
+              <ProtectedRoute>
+                <Conta />
+              </ProtectedRoute>
+            } />
+
             <Route path="/*" element={<SrcNotFound />} />
           </Routes>
           <Footer />
