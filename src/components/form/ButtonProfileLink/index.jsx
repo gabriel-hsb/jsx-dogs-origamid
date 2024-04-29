@@ -1,15 +1,15 @@
 import ProfileSvg from "../../../assets/images/icons/usuario.svg?react";
 
-import styles from "./ButtonProfileLink.module.scss";
+import * as S from "./ButtonProfileLink";
 
 const ProfileLink = ({ children }) => {
   return (
-    <div className={`${styles.profile} helvetica`}>
+    <S.ButtonProfileLink className="helvetica">
       <div>{children}</div>
       <div>
         <ProfileSvg />
       </div>
-    </div>
+    </S.ButtonProfileLink>
   );
 };
 

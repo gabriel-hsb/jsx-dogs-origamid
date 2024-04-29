@@ -1,3 +1,4 @@
+import DangerText from "../../text/DangerText";
 import * as S from "./Input.Styles";
 
 // eslint-disable-next-line react/prop-types
@@ -23,9 +24,7 @@ const TextInput = ({
         onBlur={onBlur}
         {...restProps}
       />
-
-      {/* TODO: add styled component to input error message */}
-      {error && <p style={{ color: "red" }}> {error} </p>}
+      {error && <DangerText>{error}</DangerText>}
     </S.InputContainer>
   );
 };

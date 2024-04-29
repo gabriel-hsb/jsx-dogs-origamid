@@ -11,6 +11,7 @@ import DisplayTextRect from "../../../components/text/DisplayTextRect";
 import TextInput from "../../../components/form/Input";
 
 import * as S from "./LoginWelcome.Styles";
+import DangerText from "../../../components/text/DangerText";
 
 const LoginWelcome = () => {
   const userName = useForm();
@@ -46,10 +47,12 @@ const LoginWelcome = () => {
           required
           {...userPassword}
         />
-        <SimpleButton disabled={isLoading}>
-          {isLoading ? "Entrando..." : "Entrar"}
-        </SimpleButton>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <S.LoginButonError>
+          <SimpleButton disabled={isLoading}>
+            {isLoading ? "Entrando..." : "Entrar"}
+          </SimpleButton>
+          {error && <p style={{ color: "red" }}>{error}</p>}
+        </S.LoginButonError>
       </form>
 
       <NavLink to="perdeusenha">

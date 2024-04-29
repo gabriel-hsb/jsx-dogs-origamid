@@ -8,7 +8,7 @@ import * as S from "./LoginCreate.Styles";
 
 const LoginCreate = () => {
   return (
-    <S.LoginCreate className="anime-left">
+    <S.LoginCreate className="animeLeft">
       <DisplayTextSquare>Cadastre-se</DisplayTextSquare>
       <form>
         <TextInput

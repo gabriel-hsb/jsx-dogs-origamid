@@ -7,7 +7,6 @@ export const SimpleButton = styled.button`
 
   padding: 0.75rem 2.5rem;
   display: inline-block;
-  margin-block: 1.5rem;
 
   transition: var(--transition-fast);
 

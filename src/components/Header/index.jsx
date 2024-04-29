@@ -23,7 +23,7 @@ const Header = () => {
           </NavLink>
         ) : (
           <NavLink to="login">
-            <ButtonProfileLink>{isLoading ? "Carregando..." : "Entrar / Cadastrar"}</ButtonProfileLink>
+            <ButtonProfileLink>Entrar / Cadastrar</ButtonProfileLink>
           </NavLink>
         )}
       </S.NavBar>

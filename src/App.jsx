@@ -16,7 +16,6 @@ import "./styles.css";
 function App() {
   return (
     <>
-      {/* TODO: add animation when route changes (see youtube watch later videos list) */}
       <BrowserRouter>
         <ScrollToTop />
         <UserStorage>
