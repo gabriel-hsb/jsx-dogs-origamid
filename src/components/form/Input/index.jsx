@@ -10,6 +10,7 @@ const TextInput = ({
   onChange,
   error,
   onBlur,
+  name,
   ...restProps
 }) => {
   return (
@@ -18,6 +19,7 @@ const TextInput = ({
       <S.TextInput
         className="shadow-primary"
         id={id}
+        name={id}
         type={type}
         value={value}
         onChange={onChange}

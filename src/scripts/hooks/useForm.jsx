@@ -11,6 +11,10 @@ const types = {
     regex: /^(?=.*[A-Z])(?=.*[0-9]).+$/,
     message: "Sua senha deve conter um caracter maiúsculo e um dígito",
   },
+  number: {
+    regex: /^\d+([\.,]\d+)*$/,
+    message: "Apenas números são permitidos",
+  },
 };
 
 const useForm = (type) => {

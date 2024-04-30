@@ -133,4 +133,8 @@ export const BurguerMenu = styled.button`
     background: var(--primary-color);
     box-shadow: 0 8px var(--primary-color), 0 -8px var(--primary-color);
   }
+
+  @media (width <= 500px) {
+    margin-right: 10px;
+  }
 `;
