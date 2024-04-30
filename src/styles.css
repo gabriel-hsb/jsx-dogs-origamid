@@ -14,8 +14,8 @@
 
   --radius: 6px;
 
-  --transition-fast: all 0.4s;
-  --transition-slow: all 0.8s;
+  --transition-fast: 0.4s;
+  --transition-slow: 0.8s;
 }
 
 *,
@@ -93,7 +93,7 @@ img[src$=".jpg"][src$=".jpeg"][src$=".png"] {
 .animeLeft {
   opacity: 0;
   transform: translateX(-20px);
-  animation: animeLeft 0.8s forwards;
+  animation: animeLeft var(--transition-slow) forwards;
 }
 
 @keyframes animeLeft {
