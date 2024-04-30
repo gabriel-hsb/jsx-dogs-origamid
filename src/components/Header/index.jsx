@@ -9,7 +9,7 @@ import DogsLogoSvg from "../../assets/images/icons/dogs.svg?react";
 import * as S from "./Header.Syles";
 
 const Header = () => {
-  const { data, isLoading } = useContext(UserContext);
+  const { data } = useContext(UserContext);
 
   return (
     <S.Header>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Header = styled.nav`
+export const Header = styled.div`
   box-shadow: 0 1px 1px #0000001a;
   position: fixed;
   width: 100%;
@@ -9,7 +9,7 @@ export const Header = styled.nav`
   top: 0px;
 `;
 
-export const NavBar = styled.nav`
+export const NavBar = styled.div`
   max-width: 800px;
   display: flex;
   align-items: center;

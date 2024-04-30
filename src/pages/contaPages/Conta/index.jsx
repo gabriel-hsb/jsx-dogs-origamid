@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, use } from "react";
 import { UserContext } from "../../../UserContext";
 
 import SquareButtonIcon from "../../../components/form/SquareButtonIcon";
@@ -21,7 +21,7 @@ const Conta = () => {
       <S.ContaHeader>
         <DisplayTextSquare>Minha Conta</DisplayTextSquare>
         <S.ContaNavbar>
-          <NavLink to="">
+          <NavLink to="" end>
             <SquareButtonIcon>
               <Blocks />
             </SquareButtonIcon>

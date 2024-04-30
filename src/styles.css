@@ -102,3 +102,14 @@ img[src$=".jpg"][src$=".jpeg"][src$=".png"] {
     transform: initial;
   }
 }
+
+/* NAVLINK REACT ROUTER DOM */
+
+nav .active > * {
+  box-shadow: 0px 0px 0px 5px rgba(255, 187, 17, 0.4);
+  background-color: #fff;
+}
+
+nav .active svg > * {
+  fill: var(--primary-color);
+}
