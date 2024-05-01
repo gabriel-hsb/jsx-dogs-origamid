@@ -30,7 +30,7 @@ const Conta = () => {
     // changes the title based on the current URl
     switch (location) {
       case "conta":
-        setTitle("Minha Conta");
+        setTitle("Minhas Fotos");
         break;
       case "estatisticas":
         setTitle("Estatísticas");

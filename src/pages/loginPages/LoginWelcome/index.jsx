@@ -44,6 +44,7 @@ const LoginWelcome = () => {
           id={"password"}
           label={"Senha"}
           type={"password"}
+          autocomplete="current-password"
           required
           {...userPassword}
         />

@@ -25,11 +25,14 @@ function App() {
             <Route path="/" element={<HomeFeed />} />
             <Route path="login/*" element={<Login />} />
 
-            <Route path="conta/*" element={
-              <ProtectedRoute>
-                <Conta />
-              </ProtectedRoute>
-            } />
+            <Route
+              path="conta/*"
+              element={
+                <ProtectedRoute>
+                  <Conta />
+                </ProtectedRoute>
+              }
+            />
 
             <Route path="/*" element={<SrcNotFound />} />
           </Routes>

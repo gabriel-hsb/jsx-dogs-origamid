@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledDisplay = styled.h1`
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   font-family: spectral;
   font-weight: 700;
   font-size: 3rem;

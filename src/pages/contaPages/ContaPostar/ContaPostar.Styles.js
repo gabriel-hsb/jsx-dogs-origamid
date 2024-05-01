@@ -14,7 +14,7 @@ export const PostSection = styled.section`
 
 export const PostForm = styled.form`
   input[type="text"],
-  input[type="numeric"] {
+  input[type="number"] {
     width: 90%;
   }
 
@@ -45,7 +45,7 @@ export const PhotoPreview = styled.div`
     margin: 0 auto;
 
     @media (width<= 768px) {
-      max-width: 85dvw;
+      max-width: 95dvw;
     }
 
     &::after {

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Header = styled.div`
   box-shadow: 0 1px 1px #0000001a;
+  z-index: 999;
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -20,6 +21,6 @@ export const NavBar = styled.div`
   text-decoration: none;
 
   > * {
-    padding: 10px;
+    padding: 10px 0;
   }
 `;

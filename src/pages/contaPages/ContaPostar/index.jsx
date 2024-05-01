@@ -62,7 +62,7 @@ const ContaPostar = () => {
         <TextInput
           id={"idade"}
           label={"Idade"}
-          type={"numeric"}
+          type={"number"}
           min={0}
           {...dogAge}
           required
@@ -71,7 +71,7 @@ const ContaPostar = () => {
         <TextInput
           id={"peso"}
           label={"Peso"}
-          type={"numeric"}
+          type={"number"}
           min={0}
           required
           {...dogWeight}
