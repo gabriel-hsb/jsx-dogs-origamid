@@ -6,13 +6,14 @@
   --font-color-bg-primary: #764701;
 
   --primary-color: #ffbb11;
-  --primary-color-darken: #dba620;
+  --primary-color-darken: #ac8112;
 
   --secondary-color: #ddd;
 
   --danger-text: #ff0000;
 
   --radius: 6px;
+  --radius-plus: 10px;
 
   --transition-fast: 0.4s;
   --transition-slow: 0.8s;

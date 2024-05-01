@@ -18,7 +18,7 @@ import * as S from "./Conta.Styles";
 const Conta = () => {
   const [title, setTitle] = useState("");
   const [burguerMenuActive, setBurguerMenuActive] = useState(false);
-  const mobileWidth = useMedia("(width <= 768px)");
+  const mobileWidth = useMedia("(width <= 820px)");
 
   const { userLogout } = useContext(UserContext);
 
@@ -81,7 +81,7 @@ const Conta = () => {
             {mobileWidth && <span>Postar Foto</span>}
           </NavLink>
 
-          <button onClick={userLogout}>
+          <button onClick={userLogout} style={{ background: "none" }}>
             <SquareButtonIcon>
               <LogOut />
             </SquareButtonIcon>

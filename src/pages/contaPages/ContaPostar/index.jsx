@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import useForm from "../../../scripts/hooks/useForm";
 import useFetch from "../../../scripts/hooks/useFetch";
+import { PHOTO_POST } from "../../../scripts/apiBackend";
 
 import TextInput from "../../../components/form/Input";
 import SimpleButton from "../../../components/form/SimpleButton";
+import DangerText from "../../../components/text/DangerText";
+import DisplayText from "../../../components/text/DisplayText";
 
 import * as S from "./ContaPostar.Styles";
-import { PHOTO_POST } from "../../../scripts/apiBackend";
 
 const ContaPostar = () => {
   const [dogPhoto, setDogPhoto] = useState(null);
@@ -14,6 +17,8 @@ const ContaPostar = () => {
   const dogWeight = useForm("number");
   const dogAge = useForm("number");
   const { data, isFetching, error, request } = useFetch();
+
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,53 +28,77 @@ const ContaPostar = () => {
     formData.append("peso", dogWeight.value);
     formData.append("idade", dogAge.value);
 
-    const token = window.localStorage.getItem("key");
+    const token = window.localStorage.getItem("token");
     const { url, options } = PHOTO_POST(formData, token);
-    request(url, options);
 
     if (dogName.validate() && dogWeight.validate() && dogAge.validate()) {
-      window.alert("oi");
+      request(url, options);
     }
   }
 
   function handleImgChange({ target }) {
     setDogPhoto({
+      preview: URL.createObjectURL(target.files[0]),
       raw: target.files[0],
     });
   }
 
+  useEffect(() => {
+    // redirects user to page /conta when photo is posted
+    data && navigate("/conta");
+  }, [data]);
+
   return (
-    <S.PostForm onSubmit={handleSubmit} noValidate className="animeLeft">
-      <TextInput
-        id={"nome"}
-        label={"Nome do Dog"}
-        type={"text"}
-        required
-        {...dogName}
-      />
+    <S.PostSection>
+      <S.PostForm onSubmit={handleSubmit} noValidate className="animeLeft">
+        <TextInput
+          id={"nome"}
+          label={"Nome do Dog"}
+          type={"text"}
+          required
+          {...dogName}
+        />
 
-      <TextInput
-        id={"idade"}
-        label={"Idade"}
-        type={"numeric"}
-        min={0}
-        {...dogAge}
-        required
-      />
+        <TextInput
+          id={"idade"}
+          label={"Idade"}
+          type={"numeric"}
+          min={0}
+          {...dogAge}
+          required
+        />
 
-      <TextInput
-        id={"peso"}
-        label={"Peso"}
-        type={"numeric"}
-        min={0}
-        required
-        {...dogWeight}
-      />
+        <TextInput
+          id={"peso"}
+          label={"Peso"}
+          type={"numeric"}
+          min={0}
+          required
+          {...dogWeight}
+        />
 
-      <input id={"img"} type={"file"} required onChange={handleImgChange} />
+        <input
+          id={"img"}
+          type={"file"}
+          required
+          onChange={handleImgChange}
+          accept="image/png, image/gif, image/jpeg"
+        />
 
-      <SimpleButton> Postar </SimpleButton>
-    </S.PostForm>
+        <SimpleButton disabled={isFetching}>
+          {isFetching ? "Postando..." : "Postar"}
+        </SimpleButton>
+        {error && <DangerText>{error}</DangerText>}
+      </S.PostForm>
+      <S.PhotoPreview>
+        {dogPhoto !== null && (
+          <>
+            <DisplayText> Que Dog mais lindo! 🥰 </DisplayText>
+            <div style={{ backgroundImage: `url('${dogPhoto.preview}')` }} />
+          </>
+        )}
+      </S.PhotoPreview>
+    </S.PostSection>
   );
 };
 

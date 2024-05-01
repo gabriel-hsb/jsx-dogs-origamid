@@ -8,15 +8,14 @@ import { USER_POST } from "../../../scripts/apiBackend";
 import DisplayTextSquare from "../../../components/text/DisplayTextSquare";
 import SimpleButton from "../../../components/form/SimpleButton";
 import TextInput from "../../../components/form/Input";
+import DangerText from "../../../components/text/DangerText";
 
 import * as S from "./LoginCreate.Styles";
-import DangerText from "../../../components/text/DangerText";
 
 const LoginCreate = () => {
   const userName = useForm();
   const userEmail = useForm("email");
   const userPassword = useForm();
-  // const userPassword = useForm("password");
 
   const { userLogin } = useContext(UserContext);
   const { isFetching, error, request } = useFetch();
@@ -24,6 +23,7 @@ const LoginCreate = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    
     const { url, options } = USER_POST({
       username: userName.value,
       email: userEmail.value,
@@ -31,7 +31,6 @@ const LoginCreate = () => {
     });
 
     const { response } = await request(url, options);
-    console.log(response);
     if (response.ok) userLogin(userName.value, userPassword.value);
   }
 

@@ -9,6 +9,7 @@ export const TextLabelFor = styled.label`
   font-size: 1.125 rem;
   padding-block: 0.5rem;
   color: var(--font-color-bg-light);
+  width: fit-content;
 `;
 
 export const TextInput = styled.input`

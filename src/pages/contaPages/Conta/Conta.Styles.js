@@ -5,7 +5,7 @@ export const ContaContainer = styled.div`
   width: 800px;
   padding: 10px;
 
-  @media (width <= 768px) {
+  @media (width <= 820px) {
     width: 100dvw;
   }
 `;
@@ -17,12 +17,12 @@ export const ContaHeader = styled.header`
   margin-bottom: 1rem;
   position: relative;
 
-  @media (width <= 768px) {
-    padding-inline: 2rem;
+  @media (width <= 820px) {
+    padding-left: 7px;
   }
 
   @media (width <= 500px) {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
 
@@ -47,9 +47,9 @@ export const ContaNavbar = styled.nav`
     position: absolute;
     top: 70px;
     right: 0px;
-    padding: 0 1rem;
+    padding: 1rem;
     background: #fff;
-    box-shadow: 0 1 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 1px 1px #0000001a;
     border-radius: var(--radius);
     transform: translateX(-10px);
     opacity: 0;
@@ -57,8 +57,8 @@ export const ContaNavbar = styled.nav`
     align-items: flex-start;
     pointer-events: none;
 
-    & a,
-    & button {
+    a,
+    button {
       display: flex;
       align-items: center;
       border: none;
@@ -134,7 +134,7 @@ export const BurguerMenu = styled.button`
     box-shadow: 0 8px var(--primary-color), 0 -8px var(--primary-color);
   }
 
-  @media (width <= 500px) {
-    margin-right: 10px;
+  @media (width <= 820px >= 768px) {
+    margin-right: 1rem;
   }
 `;
