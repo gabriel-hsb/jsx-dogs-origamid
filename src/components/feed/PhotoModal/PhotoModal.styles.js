@@ -1,8 +1,13 @@
 import { styled } from "styled-components";
 
-export const PhotoModalContainer = styled.div`
-  position: absolute;
-  z-index: 999;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+export const PhotoModalVh = styled.div`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 1000;
+  padding: 2rem calc(4rem + 15px) 2rem 4rem;
 `;

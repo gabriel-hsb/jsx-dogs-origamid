@@ -1,14 +1,20 @@
-import DisplayTextSquare from "../../components/text/DisplayTextSquare";
+import { useState } from "react";
 
+import FeedPhotosGrid from "../../components/feed/FeedPhotosGrid";
 import PhotoModal from "../../components/feed/PhotoModal";
 
 import * as S from "./HomeFeed.Styles";
-import FeedPhotosGrid from "../../components/feed/FeedPhotosGrid";
 
 const HomeFeed = () => {
+  const [photoModal, setPhotoModal] = useState(null);
+
   return (
     <S.HomeFeedContainer>
-      <FeedPhotosGrid />
+      {photoModal && (
+        <PhotoModal photo={photoModal} setPhotoModal={setPhotoModal} />
+      )}
+
+      <FeedPhotosGrid setPhotoModal={setPhotoModal} />
     </S.HomeFeedContainer>
   );
 };

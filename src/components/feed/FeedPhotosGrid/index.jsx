@@ -9,7 +9,7 @@ import LoadingAnimatedSvg from "../../LoadingAnimatedSvg";
 
 import * as S from "./FeedPhotosGrid.Styles";
 
-const FeedPhotosGrid = () => {
+const FeedPhotosGrid = ({ setPhotoModal }) => {
   const { data, isFetching, error, request } = useFetch();
 
   useEffect(() => {
@@ -29,7 +29,11 @@ const FeedPhotosGrid = () => {
     return (
       <S.FeedPhotosGridContainer>
         {data.map((photo) => (
-          <FeedPhoto key={photo.id} photo={photo} />
+          <FeedPhoto
+            key={photo.id}
+            photo={photo}
+            setPhotoModal={setPhotoModal}
+          />
         ))}
       </S.FeedPhotosGridContainer>
     );
