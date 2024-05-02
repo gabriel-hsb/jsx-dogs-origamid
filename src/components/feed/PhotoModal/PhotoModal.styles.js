@@ -6,7 +6,7 @@ export const PhotoModalVh = styled.div`
   height: 100vh;
   top: 0px;
   left: 0px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
   display: flex;
   z-index: 1000;
   padding: 2rem calc(4rem + 15px) 2rem 4rem;
