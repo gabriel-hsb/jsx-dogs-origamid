@@ -5,6 +5,7 @@ import useFetch from "../../../scripts/hooks/useFetch";
 import DangerText from "../../text/DangerText";
 import PhotoModalContent from "../PhotoModalContent";
 
+
 import * as S from "./PhotoModal.Styles";
 
 const PhotoModal = ({ photo, setPhotoModal }) => {
