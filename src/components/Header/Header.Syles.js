@@ -4,7 +4,7 @@ export const Header = styled.div`
   box-shadow: 0 1px 1px #0000001a;
   z-index: 999;
   position: fixed;
-  width: 100%;
+  width: 100dvw;
   z-index: 100;
   background: white;
   top: 0px;

@@ -31,11 +31,12 @@ export const FeedPhoto = styled.li`
     color: #fff;
     align-items: center;
     justify-content: center;
-    display: none;
     gap: 0.3rem;
+
+    display: none;
   }
 
-  &:hover {
+  &:hover div {
     span {
       display: flex;
     }

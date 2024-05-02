@@ -1,11 +1,13 @@
 import ViewsIcon from "../../../assets/images/icons/visualizacao.svg?react";
 
+import ImageSkeleton from "../ImageSkeleton";
+
 import * as S from "./FeedPhoto.Styles";
 
 const FeedPhoto = ({ photo, setPhotoModal }) => {
   return (
     <S.FeedPhoto className="animeLeft" onClick={() => setPhotoModal(photo)}>
-      <img src={photo.src} alt={photo.title} />
+      <ImageSkeleton src={photo.src} alt={photo.title} />
       <span>
         <ViewsIcon /> {photo.acessos}
       </span>

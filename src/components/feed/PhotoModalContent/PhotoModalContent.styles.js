@@ -36,7 +36,7 @@ export const Photo = styled.div`
 `;
 
 export const PhotoModalContentInfos = styled.div`
-  padding: 2rem;
+  padding: 1.5rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
 
@@ -52,6 +52,35 @@ export const PhotoModalContentInfos = styled.div`
 
   @media (width <= 500px) {
     padding: 1rem;
+  }
+`;
+
+export const PhotoDelete = styled.div`
+  color: #989898;
+
+  button {
+    background: #eee;
+    padding: 0.25rem;
+    cursor: pointer;
+    border-radius: var(--radius);
+
+    border: 1px solid #eec1;
+    border-color: #eec1;
+    outline: transparent;
+    transition: var(--transition-fast);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0px 0px 14px 2px rgba(255, 1, 1, 0.4);
+      color: var(--danger-text);
+    }
+
+    &:disabled {
+      cursor: progress;
+      box-shadow: none;
+      background: transparent;
+      color: var(--danger-text);
+    }
   }
 `;
 

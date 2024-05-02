@@ -13,10 +13,8 @@ import * as S from "./PhotoComments.Styles";
 import PhotoCommentInput from "../PhotoCommentInput";
 
 const PhotoComments = (props) => {
-  const { isLogged } = useContext(UserContext);
   const [comments, setComments] = useState(() => props.comments);
-
-  console.log(props);
+  const { isLogged } = useContext(UserContext);
 
   return (
     <S.CommentList>
@@ -34,7 +32,7 @@ const PhotoComments = (props) => {
         );
       })}
       {isLogged && (
-        <PhotoCommentInput id={props.photo.id} setComments={setComments} />
+        <PhotoCommentInput photoId={props.photo.id} setComments={setComments} />
       )}
     </S.CommentList>
   );
