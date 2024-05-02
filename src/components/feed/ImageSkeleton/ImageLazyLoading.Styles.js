@@ -4,7 +4,7 @@ export const LazyLoadingContainer = styled.div`
   display: grid;
 
   img {
-    display: block;
+    display: grid;
     max-width: 100%;
     grid-area: 1/1;
     opacity: 0;

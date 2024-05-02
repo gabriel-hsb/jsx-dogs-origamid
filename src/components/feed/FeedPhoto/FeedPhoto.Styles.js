@@ -26,6 +26,7 @@ export const FeedPhoto = styled.li`
 
   span {
     grid-area: 1/1;
+    z-index: 999;
     background: rgba(0, 0, 0, 0.3);
     font-size: 1rem;
     color: #fff;
@@ -36,9 +37,7 @@ export const FeedPhoto = styled.li`
     display: none;
   }
 
-  &:hover div {
-    span {
-      display: flex;
-    }
+  &:hover span {
+    display: flex;
   }
 `;

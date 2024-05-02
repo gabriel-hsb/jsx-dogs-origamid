@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
 import { PHOTO_GET } from "../../../scripts/apiBackend";
+
+import LoadingAnimatedSvg from "../../LoadingAnimatedSvg";
 import useFetch from "../../../scripts/hooks/useFetch";
 import DangerText from "../../text/DangerText";
 import PhotoModalContent from "../PhotoModalContent";
@@ -22,7 +24,7 @@ const PhotoModal = ({ photo, setPhotoModal }) => {
   return (
     <S.PhotoModalVh onClick={handleOutsideClick}>
       {error && <DangerText>{error}</DangerText>}
-      {isFetching && <DangerText>Carregando...</DangerText>}
+      {isFetching && <LoadingAnimatedSvg />}
       {data && <PhotoModalContent data={data} />}
     </S.PhotoModalVh>
   );

@@ -8,7 +8,6 @@ const ImageSkeleton = ({ ...restProps }) => {
   function handleImgLoad({ target }) {
     setSkeleton(false);
     target.style.opacity = 1;
-    console.log("loaded");
   }
 
   return (

@@ -31,6 +31,7 @@ const PhotoComments = (props) => {
           </S.CommentContainer>
         );
       })}
+      {/* TODO: if user isn't logged, display text 'Entre em sua conta para comentar' */}
       {isLogged && (
         <PhotoCommentInput photoId={props.photo.id} setComments={setComments} />
       )}

@@ -16,7 +16,6 @@ const FeedPhotosGrid = ({ setPhotoModal }) => {
     async function fetchAllPhotos() {
       const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 0 });
       const { json, response } = await request(url, options);
-      console.log(data);
     }
 
     fetchAllPhotos();
