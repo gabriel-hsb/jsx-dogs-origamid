@@ -5,8 +5,7 @@ import useFetch from "../../../scripts/hooks/useFetch";
 import DangerText from "../../text/DangerText";
 import PhotoModalContent from "../PhotoModalContent";
 
-
-import * as S from "./PhotoModal.Styles";
+import * as S from "./PhotoModal.styles";
 
 const PhotoModal = ({ photo, setPhotoModal }) => {
   const { data, error, isFetching, request } = useFetch();
