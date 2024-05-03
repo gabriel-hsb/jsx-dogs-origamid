@@ -5,7 +5,7 @@ import PhotoModal from "../../components/feed/PhotoModal";
 
 import * as S from "./HomeFeed.Styles";
 
-const HomeFeed = () => {
+const HomeFeed = ({ userId, page, setKeepFetching }) => {
   const [photoModal, setPhotoModal] = useState(null);
 
   return (
@@ -14,7 +14,12 @@ const HomeFeed = () => {
         <PhotoModal photo={photoModal} setPhotoModal={setPhotoModal} />
       )}
 
-      <FeedPhotosGrid setPhotoModal={setPhotoModal} />
+      <FeedPhotosGrid
+        setPhotoModal={setPhotoModal}
+        userId={userId}
+        page={page}
+        setKeepFetching={setKeepFetching}
+      />
     </S.HomeFeedContainer>
   );
 };

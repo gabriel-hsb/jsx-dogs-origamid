@@ -18,7 +18,11 @@ const PhotoCommentInput = ({ photoId, setComments }) => {
 
     const token = window.localStorage.getItem("token");
 
-    const { url, options } = COMMENT_POST(photoId, "teste", token);
+    const { url, options } = COMMENT_POST({
+      id: photoId,
+      body: newComment,
+      token: token,
+    });
     const { response, json } = await request(url, options);
     if (response.ok) {
       console.log(json);

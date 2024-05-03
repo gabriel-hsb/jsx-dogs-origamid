@@ -8,6 +8,8 @@ import ContaPostar from "../ContaPostar";
 import SquareButtonIcon from "../../../components/form/SquareButtonIcon";
 import DisplayTextSquare from "../../../components/text/DisplayTextSquare";
 
+import Homefeed from "../../../pages/HomeFeed";
+
 import Stats from "../../../assets/images/icons/estatisticas.svg?react";
 import Blocks from "../../../assets/images/icons/feed.svg?react";
 import Add from "../../../assets/images/icons/adicionar.svg?react";
@@ -18,9 +20,36 @@ import * as S from "./Conta.Styles";
 const Conta = () => {
   const [title, setTitle] = useState("");
   const [burguerMenuActive, setBurguerMenuActive] = useState(false);
+
+  const [keepFetching, setKeepFetching] = useState(true);
+  const [pages, setPages] = useState([1]);
+
+  const { userLogout, data: userData } = useContext(UserContext);
   const mobileWidth = useMedia("(width <= 820px)");
 
-  const { userLogout } = useContext(UserContext);
+  useEffect(() => {
+    let wait = false;
+    function infiniteScroll() {
+      if (keepFetching) {
+        const scroll = window.scrollY;
+        const height = document.body.offsetHeight - window.innerHeight;
+        if (scroll > height * 0.75 && !wait) {
+          setPages((pages) => [...pages, pages.length + 1]);
+          wait = true;
+          setTimeout(() => {
+            wait = false;
+          }, 500);
+        }
+      }
+    }
+
+    window.addEventListener("wheel", infiniteScroll);
+    window.addEventListener("scroll", infiniteScroll);
+    return () => {
+      window.removeEventListener("wheel", infiniteScroll);
+      window.removeEventListener("scroll", infiniteScroll);
+    };
+  }, [keepFetching]);
 
   let location = useLocation();
   location = location.pathname.split("/");
@@ -91,7 +120,20 @@ const Conta = () => {
       </S.ContaHeader>
 
       <Routes>
-        {/* <Route path="" /> */}
+        {/* FIXME: hover and modal totally out of place (something to do with css) */}
+
+        {/* <Route path="" element={<Homefeed userId={userData.id} />} /> */}
+        <Route
+          path=""
+          element={pages.map((page) => {
+            <Homefeed
+              key={page}
+              userId={userData.id}
+              page={page}
+              setKeepFetching={setKeepFetching}
+            />;
+          })}
+        />
         {/* <Route path="estatisticas" /> */}
         <Route path="postar" element={<ContaPostar />} />
       </Routes>

@@ -5,6 +5,11 @@ export const ContaContainer = styled.div`
   width: 800px;
   padding: 10px;
 
+  section {
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
   @media (width <= 820px) {
     width: 100dvw;
   }
@@ -15,7 +20,6 @@ export const ContaHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
-  position: relative;
 
   @media (width <= 820px) {
     padding-left: 7px;
@@ -44,7 +48,6 @@ export const ContaNavbar = styled.nav`
   /* className applyed only when screen width matches mobile */
   &.mobileContaNavBar {
     width: 15rem;
-    position: absolute;
     top: 70px;
     right: 0px;
     padding: 1rem;
