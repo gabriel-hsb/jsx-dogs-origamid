@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContaContainer = styled.div`
   margin: 0 auto;
   width: 800px;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 
   section {
     padding: 0;
@@ -19,7 +19,6 @@ export const ContaHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
 
   @media (width <= 820px) {
     padding-left: 7px;

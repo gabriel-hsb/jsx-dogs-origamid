@@ -9,24 +9,25 @@ import LoadingAnimatedSvg from "../../LoadingAnimatedSvg";
 
 import * as S from "./FeedPhotosGrid.Styles";
 
-const FeedPhotosGrid = ({ setPhotoModal, userId, page, setKeepFetching }) => {
+const FeedPhotosGrid = ({ setPhotoModal, userId, page, setInfinite }) => {
   const { data, isFetching, error, request } = useFetch();
 
   useEffect(() => {
     async function fetchAllPhotos() {
-      const total = 3;
-      const { url, options } = PHOTOS_GET({ page: 1, total, user: userId });
+      const total = 6;
+      const { url, options } = PHOTOS_GET({ page, total, user: userId });
       const { json, response } = await request(url, options);
-      console.log("Request:", json);
-      if (response && response.ok && json.length < total) setInfinite(false);
+      console.log(json);
+      if (response && response.ok && json.length < total) {
+        setInfinite(false);
+      }
     }
 
     fetchAllPhotos();
-  }, [request, userId]);
+  }, [request, userId, page, setInfinite]);
 
   if (error) return <DangerText>{error}</DangerText>;
   if (isFetching) return <LoadingAnimatedSvg />;
-
   if (data)
     return (
       <S.FeedPhotosGridContainer>

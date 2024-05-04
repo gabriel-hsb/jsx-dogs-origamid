@@ -4,6 +4,8 @@ export const PostSection = styled.section`
   min-height: 100dvh;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 800px;
+  margin: 0 auto;
 
   @media (width<= 768px) {
     grid-template-columns: 1fr;
