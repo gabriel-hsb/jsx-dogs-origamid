@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import HomeFeed from "./pages/HomeFeed";
 import Login from "./pages/loginPages/Login";
 import Conta from "./pages/contaPages/Conta";
+import Foto from "./pages/foto";
 import SrcNotFound from "./pages/SrcNotFound";
 
 import "./styles.css";
@@ -24,7 +25,6 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeFeed />} />
             <Route path="login/*" element={<Login />} />
-
             <Route
               path="conta/*"
               element={
@@ -33,6 +33,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="foto/:id" element={<Foto />} />
 
             <Route path="/*" element={<SrcNotFound />} />
           </Routes>

@@ -1,25 +1,30 @@
 import { styled } from "styled-components";
 
-export const CommentList = styled.ul`
-  display: flex;
-  flex-direction: column;
+export const CommentList = styled.div`
+  display: grid;
+  grid-template-rows: 1fr auto;
   gap: 0.5rem;
-  padding: 2rem 0;
+  padding-top: 2rem;
   /* overflow-y: auto; */
   /* TODO: FIX OVERFLOW Y SCROLL */
 
   @media (width <= 920px) {
     padding: 1.5rem 0;
   }
+
+  @media (width <= 950px) {
+    gap: 2rem;
+  }
 `;
 
-export const CommentContainer = styled.div`
+export const CommentContainer = styled.ol`
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.5rem;
+  min-height: 10rem;
 `;
 
-export const Comment = styled.li`
+export const Comment = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -28,9 +33,21 @@ export const Comment = styled.li`
 
 export const Author = styled.span`
   font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+  }
 `;
 
 export const Date = styled.span`
-  color: var(--font-color-bg-light);
   color: #989898;
+`;
+
+export const LoginToComment = styled.p`
+  color: #989898 !important;
+  a,
+  span {
+    font-weight: bold;
+    display: inline-block !important;
+  }
 `;

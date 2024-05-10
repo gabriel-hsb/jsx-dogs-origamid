@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TextUnderline = styled.p`
+export const TextUnderline = styled.span`
   color: rgba(51, 51, 51, 0.85);
   font-size: 1.025rem;
   display: inline-block;

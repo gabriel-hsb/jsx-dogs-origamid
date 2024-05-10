@@ -18,6 +18,7 @@ export const CommentInputContainer = styled.div`
     border: 1px solid #eee;
     outline: transparent;
     resize: none;
+    width: 100%;
 
     &:hover,
     &:focus {

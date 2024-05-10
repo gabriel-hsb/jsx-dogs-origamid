@@ -11,6 +11,7 @@ import { UserContext } from "../../../UserContext";
 
 import * as S from "./PhotoComments.Styles";
 import PhotoCommentInput from "../PhotoCommentInput";
+import TextUnderline from "../../text/TextUnderline";
 
 const PhotoComments = (props) => {
   const [comments, setComments] = useState(() => props.comments);
@@ -18,22 +19,34 @@ const PhotoComments = (props) => {
 
   return (
     <S.CommentList>
-      {comments.map((comment) => {
-        return (
-          <S.CommentContainer key={comment.comment_ID}>
-            <S.Comment>
-              <Link to={`perfil/${comment.comment_author}`}>
-                <S.Author> {comment.comment_author} </S.Author>
-              </Link>
-              <S.Date>{dayjs(comment.comment_date).toNow(true)}</S.Date>
-            </S.Comment>
-            <p> {comment.comment_content} </p>
-          </S.CommentContainer>
-        );
-      })}
-      {/* TODO: if user isn't logged, display text 'Entre em sua conta para comentar' */}
-      {isLogged && (
+      <S.CommentContainer>
+        {comments.map((comment) => {
+          return (
+            <li key={comment.comment_ID}>
+              <S.Comment>
+                <Link to={`perfil/${comment.comment_author}`}>
+                  <S.Author> {comment.comment_author} </S.Author>
+                </Link>
+                <S.Date>{dayjs(comment.comment_date).toNow(true)}</S.Date>
+              </S.Comment>
+              <p> {comment.comment_content} </p>
+            </li>
+          );
+        })}
+      </S.CommentContainer>
+      {isLogged ? (
         <PhotoCommentInput photoId={props.photo.id} setComments={setComments} />
+      ) : (
+        <S.LoginToComment>
+          <Link to={"/login"}>
+            <TextUnderline>Faça Login</TextUnderline>{" "}
+          </Link>{" "}
+          ou{" "}
+          <Link to={"/login/criar"}>
+            <TextUnderline>Cadastre-se</TextUnderline>
+          </Link>{" "}
+          para comentar
+        </S.LoginToComment>
       )}
     </S.CommentList>
   );
