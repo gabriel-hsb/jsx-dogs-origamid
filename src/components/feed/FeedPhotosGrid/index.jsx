@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router";
 import { PHOTOS_GET } from "../../../scripts/apiBackend";
 import useFetch from "../../../scripts/hooks/useFetch";
 
@@ -17,7 +18,6 @@ const FeedPhotosGrid = ({ setPhotoModal, userId, page, setInfinite }) => {
       const total = 6;
       const { url, options } = PHOTOS_GET({ page, total, user: userId });
       const { json, response } = await request(url, options);
-      console.log(json);
       if (response && response.ok && json.length < total) {
         setInfinite(false);
       }
@@ -27,7 +27,6 @@ const FeedPhotosGrid = ({ setPhotoModal, userId, page, setInfinite }) => {
   }, [request, userId, page, setInfinite]);
 
   if (error) return <DangerText>{error}</DangerText>;
-  if (isFetching) return <LoadingAnimatedSvg />;
   if (data)
     return (
       <S.FeedPhotosGridContainer>

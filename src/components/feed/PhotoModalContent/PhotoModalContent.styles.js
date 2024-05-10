@@ -21,11 +21,17 @@ export const PhotoModalContentContainer = styled.div`
     max-width: 100%;
   }
 
+  max-height: 90dvh;
+  min-width: 450px;
+
   @media (width <= 920px) {
     grid-template-columns: 1fr;
     max-height: calc(100vh - 4rem);
     overflow-y: auto;
-    min-width: 80vw;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;
 
@@ -33,5 +39,7 @@ export const Photo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  img {
+    max-height: 90dvh;
+  }
 `;
-

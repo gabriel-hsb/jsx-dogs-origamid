@@ -7,7 +7,6 @@ export const FeedPhoto = styled.li`
   border-radius: var(--radius);
   overflow: hidden;
   cursor: pointer;
-
   &:nth-child(2) {
     grid-column: 2 / 4;
     grid-row: span 2;
@@ -18,7 +17,7 @@ export const FeedPhoto = styled.li`
     }
   }
 
-  img {
+  img, div {
     grid-area: 1/1;
     object-fit: contain;
     max-width: 100%;
@@ -33,8 +32,22 @@ export const FeedPhoto = styled.li`
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
 
     display: none;
+    div {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        
+      }
+    }
   }
 
   &:hover span {

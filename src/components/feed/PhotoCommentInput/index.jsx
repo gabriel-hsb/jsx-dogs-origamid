@@ -35,24 +35,23 @@ const PhotoCommentInput = ({ photoId, setComments }) => {
   return (
     <S.CommentInputContainer>
       <form onSubmit={handleSubmit}>
-        {/* {error ? ( */}
-        {/* <DangerText>{error}</DangerText> */}
-        {/* ) : ( */}
-        <textarea
-          value={newComment}
-          onChange={({ target }) => setNewComment(target.value)}
-          placeholder="Comente aqui"
-          spellCheck
-          className="shadow-primary"
-          id="comment"
-          name="comment"
-          required
-        />
-        {/* )} */}
+        {error ? (
+          <DangerText>Erro. Tente novamente.</DangerText>
+        ) : (
+          <textarea
+            value={newComment}
+            onChange={({ target }) => setNewComment(target.value)}
+            placeholder="Comente aqui"
+            spellCheck
+            className="shadow-primary"
+            id="comment"
+            name="comment"
+            required
+          />
+        )}
         <button>
           <SendCommentSvg />
         </button>
-        {error && error}
       </form>
     </S.CommentInputContainer>
   );

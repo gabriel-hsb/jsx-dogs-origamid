@@ -35,10 +35,6 @@ export const PhotoPreview = styled.div`
   padding-top: 1.5rem;
   text-align: center;
 
-  h2 {
-    margin-bottom: 0.5rem;
-  }
-
   div {
     background-size: cover;
     background-position: center center;

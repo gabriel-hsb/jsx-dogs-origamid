@@ -14,4 +14,7 @@ export const PostsEndText = styled.p`
   text-align: center;
   padding: 2rem 0;
   color: #888;
+  a {
+    font-weight: bold;
+  }
 `;

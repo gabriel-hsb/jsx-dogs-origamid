@@ -8,7 +8,7 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  width: 100dvw;
+  width: 100%;
 
   p {
     color: var(--font-color-bg-primary)

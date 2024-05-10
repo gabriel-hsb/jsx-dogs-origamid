@@ -92,10 +92,7 @@ const ContaPostar = () => {
       </S.PostForm>
       <S.PhotoPreview>
         {dogPhoto !== null && (
-          <>
-            <DisplayText> Que Dog mais lindo! 🥰 </DisplayText>
-            <div style={{ backgroundImage: `url('${dogPhoto.preview}')` }} />
-          </>
+          <div style={{ backgroundImage: `url('${dogPhoto.preview}')` }} />
         )}
       </S.PhotoPreview>
     </S.PostSection>

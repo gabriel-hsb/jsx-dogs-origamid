@@ -9,11 +9,7 @@ export const CommentList = styled.div`
   /* TODO: FIX OVERFLOW Y SCROLL */
 
   @media (width <= 920px) {
-    padding: 1.5rem 0;
-  }
-
-  @media (width <= 950px) {
-    gap: 2rem;
+    padding-top: 1.5rem;
   }
 `;
 

@@ -1,17 +1,22 @@
 import ViewsIcon from "../../../assets/images/icons/visualizacao.svg?react";
+import CommentsIcon from "../../../assets/images/icons/mensagem.svg?react";
 
 import ImageSkeleton from "../ImageSkeleton";
 
 import * as S from "./FeedPhoto.Styles";
 
 const FeedPhoto = ({ photo, setPhotoModal }) => {
+  console.log(photo);
   return (
-    //FIXME: display span with views on hover
-    //TODO: also display comment count along with acessos on hover
     <S.FeedPhoto className="animeLeft" onClick={() => setPhotoModal(photo)}>
       <ImageSkeleton src={photo.src} alt={photo.title} />
       <span>
-        <ViewsIcon /> {photo.acessos}
+        <div>
+          <ViewsIcon /> {photo.acessos}{" "}
+        </div>
+        <div>
+          <CommentsIcon /> {photo.total_comments}{" "}
+        </div>
       </span>
     </S.FeedPhoto>
   );
