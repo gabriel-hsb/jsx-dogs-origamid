@@ -10,47 +10,34 @@ import SendCommentSvg from "../../../assets/images/icons/enviar.svg?react";
 import * as S from "./PhotoCommentInput.Styles";
 
 const PhotoCommentInput = ({ photoId, setComments }) => {
-  const [newComment, setNewComment] = useState("");
+  const [comment, setComment] = useState("");
   const { request, error } = useFetch();
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    const token = window.localStorage.getItem("token");
-
-    const { url, options } = COMMENT_POST({
-      id: photoId,
-      body: newComment,
-      token: token,
-    });
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const { url, options } = COMMENT_POST(photoId, { comment });
     const { response, json } = await request(url, options);
+    console.log(response);
     if (response.ok) {
-      console.log(json);
-      console.log("deu certo");
-      // FIXME: post comment
-      // setNewComment("");
-      // setComments((comments) => [...comments, json]);
+      setComment("");
+      setComments((comments) => [...comments, json]);
     }
   }
 
   return (
     <S.CommentInputContainer>
       <form onSubmit={handleSubmit}>
-        {error ? (
-          <DangerText>Erro. Tente novamente.</DangerText>
-        ) : (
-          <textarea
-            value={newComment}
-            onChange={({ target }) => setNewComment(target.value)}
-            placeholder="Comente aqui"
-            spellCheck
-            className="shadow-primary"
-            id="comment"
-            name="comment"
-            required
-          />
-        )}
-        <button>
+        <textarea
+          value={comment}
+          onChange={({ target }) => setComment(target.value)}
+          placeholder={"Comente aqui"}
+          spellCheck
+          className="shadow-primary"
+          id="comment"
+          name="comment"
+          required
+        />
+        <button type="submit">
           <SendCommentSvg />
         </button>
       </form>

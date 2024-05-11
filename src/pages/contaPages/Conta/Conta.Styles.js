@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-export const ContaContainer = styled.div`
+export const ContaContainer = styled.header`
   margin: 0 auto;
   width: 800px;
   padding: 10px 10px 0 10px;
+  z-index: 100;
+  position: relative;
 
   section {
     padding: 0;
@@ -11,7 +13,7 @@ export const ContaContainer = styled.div`
   }
 
   @media (width <= 820px) {
-    width: 100dvw;
+    width: 100%;
   }
 `;
 
@@ -19,6 +21,7 @@ export const ContaHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 
   @media (width <= 820px) {
     padding-left: 7px;
@@ -46,18 +49,23 @@ export const ContaNavbar = styled.nav`
 
   /* className applyed only when screen width matches mobile */
   &.mobileContaNavBar {
-    width: 15rem;
+    width: 13rem;
     top: 70px;
-    right: 0px;
-    padding: 1rem;
+    right: 10px;
+    padding: .8rem;
     background: #fff;
     box-shadow: 0 0 1px 1px #0000001a;
     border-radius: var(--radius);
-    transform: translateX(-10px);
     opacity: 0;
     flex-direction: column;
     align-items: flex-start;
     pointer-events: none;
+    position: absolute;
+    z-index: 100;
+
+    & > * {
+      z-index: 999;
+    }
 
     a,
     button {
@@ -77,7 +85,7 @@ export const ContaNavbar = styled.nav`
   &.mobileContaNavBarActive {
     pointer-events: initial;
 
-    z-index: 999;
+    z-index: 100;
     opacity: 1;
     transition: var(--transition-fast);
     transform: initial;

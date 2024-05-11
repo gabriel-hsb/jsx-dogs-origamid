@@ -28,8 +28,4 @@ export const TextInput = styled.input`
     background-color: #fff;
     border-color: var(--primary-color);
   }
-
-  @media (width <= 768px) {
-    width: 20rem;
-  }
 `;

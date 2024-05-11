@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import DogLoginImg from "../../../assets/images/photos/login.jpg";
 
-export const LoginContainer = styled.div`
+export const LoginContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -30,7 +30,9 @@ export const LoginInfos = styled.div`
   padding-block: 5rem;
 
   @media (width <= 768px) {
-    margin: 0 auto;
-    padding-block: 2rem;
+    padding: 2rem 10px;
+    input {
+      width: 100%;
+    }
   }
 `;

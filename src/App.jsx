@@ -11,7 +11,7 @@ import Login from "./pages/loginPages/Login";
 import Conta from "./pages/contaPages/Conta";
 import Foto from "./pages/foto";
 import Perfil from "./pages/Perfil";
-import SrcNotFound from "./pages/SrcNotFound";
+import NotFound from "./pages/NotFound";
 
 import "./styles.css";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -37,7 +37,7 @@ function App() {
             <Route path="foto/:id" element={<Foto />} />
             <Route path="perfil/:user" element={<Perfil />} />
 
-            <Route path="/*" element={<SrcNotFound />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
           <Footer />
         </UserStorage>

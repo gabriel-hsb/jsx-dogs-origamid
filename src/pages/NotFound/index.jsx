@@ -1,8 +1,8 @@
 import DisplayTextSquare from "../../components/text/DisplayTextSquare";
 
-import * as S from "./SrcNotFound.Styles";
+import * as S from "./NotFound.Styles";
 
-const SrcNotFound = () => {
+const NotFound = () => {
   return (
     <S.NotFoundContainer className="animeLeft">
       <DisplayTextSquare>Erro 404</DisplayTextSquare>
@@ -11,4 +11,4 @@ const SrcNotFound = () => {
   );
 };
 
-export default SrcNotFound;
+export default NotFound;

@@ -94,7 +94,6 @@ const Conta = () => {
         </S.ContaHeader>
       </S.ContaContainer>
       <Routes>
-        {/* FIXME: hover and modal totally out of place (something to do with css) */}
         <Route path="" element={<Homefeed userId={userData.id} />} />
 
         {/* <Route path="estatisticas" /> */}

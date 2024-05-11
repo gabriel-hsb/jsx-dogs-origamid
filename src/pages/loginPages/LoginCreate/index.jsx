@@ -15,7 +15,7 @@ import * as S from "./LoginCreate.Styles";
 const LoginCreate = () => {
   const userName = useForm();
   const userEmail = useForm("email");
-  const userPassword = useForm();
+  const userPassword = useForm("password");
 
   const { userLogin } = useContext(UserContext);
   const { isFetching, error, request } = useFetch();

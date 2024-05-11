@@ -3,10 +3,8 @@ import { styled } from "styled-components";
 export const CommentList = styled.div`
   display: grid;
   grid-template-rows: 1fr auto;
-  gap: 0.5rem;
+  gap: 1rem;
   padding-top: 2rem;
-  /* overflow-y: auto; */
-  /* TODO: FIX OVERFLOW Y SCROLL */
 
   @media (width <= 920px) {
     padding-top: 1.5rem;
@@ -18,6 +16,12 @@ export const CommentContainer = styled.ol`
   flex-direction: column;
   gap: 0.5rem;
   min-height: 10rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 330px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Comment = styled.div`

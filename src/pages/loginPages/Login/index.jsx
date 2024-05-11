@@ -1,4 +1,4 @@
-import Login404 from "../Login404";
+import NotFound from "../../NotFound";
 import LoginCreate from "../LoginCreate";
 import LoginLostPassword from "../LoginLostPassword";
 import LoginResetPassword from "../LoginResetPassword";
@@ -17,7 +17,7 @@ const Login = () => {
           <Route path="criar" element={<LoginCreate />} />
           <Route path="perdeusenha" element={<LoginLostPassword />} />
           <Route path="resetarsenha" element={<LoginResetPassword />} />
-          <Route path="*" element={<Login404 />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </S.LoginInfos>
     </S.LoginContainer>

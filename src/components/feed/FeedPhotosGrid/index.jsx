@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router";
 import { PHOTOS_GET } from "../../../scripts/apiBackend";
 import useFetch from "../../../scripts/hooks/useFetch";
 
@@ -10,7 +9,13 @@ import LoadingAnimatedSvg from "../../LoadingAnimatedSvg";
 
 import * as S from "./FeedPhotosGrid.Styles";
 
-const FeedPhotosGrid = ({ setPhotoModal, userId, page, setInfinite }) => {
+const FeedPhotosGrid = ({
+  setPhotoModal,
+  userId,
+  page,
+  setInfinite,
+  setDataLenght,
+}) => {
   const { data, isFetching, error, request } = useFetch();
 
   useEffect(() => {
@@ -26,7 +31,11 @@ const FeedPhotosGrid = ({ setPhotoModal, userId, page, setInfinite }) => {
     fetchAllPhotos();
   }, [request, userId, page, setInfinite]);
 
-  if (error) return <DangerText>{error}</DangerText>;
+  useEffect(() => {
+    data && setDataLenght(data.length);
+  }, [data]);
+
+  if (error) return <DangerText>Erro. Por favor tente novamente.</DangerText>;
   if (isFetching) return <LoadingAnimatedSvg />;
   if (data)
     return (

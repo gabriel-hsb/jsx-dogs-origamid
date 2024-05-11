@@ -3,15 +3,17 @@ import { useLocation, Link } from "react-router-dom";
 
 import FeedPhotosGrid from "../../components/feed/FeedPhotosGrid";
 import PhotoModal from "../../components/feed/PhotoModal";
+import TextUnderline from "../../components/text/TextUnderline";
+import ArrowUp from "../../assets/images/icons/seta-cima.svg?react";
 
 import * as S from "./HomeFeed.Styles";
-import TextUnderline from "../../components/text/TextUnderline";
 
 const HomeFeed = ({ userId }) => {
   const [photoModal, setPhotoModal] = useState(null);
   const [pages, setPages] = useState([1]);
   const [infinite, setInfinite] = useState(true);
 
+  const [dataLenght, setDataLenght] = useState(null);
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -53,6 +55,7 @@ const HomeFeed = ({ userId }) => {
       {pages.map((page) => {
         return (
           <FeedPhotosGrid
+            setDataLenght={setDataLenght}
             key={page}
             setPhotoModal={setPhotoModal}
             userId={userId}
@@ -61,26 +64,28 @@ const HomeFeed = ({ userId }) => {
           />
         );
       })}
-      {/* TODO: "Você ainda não postou nenhuma foto" message on 'conta' when user hasn't posted any photos */}
-      {/* {infinite === false && (
+      {dataLenght === 0 && pathname.includes("conta") && (
         <S.PostsEndText>
-          {pathname.includes("conta") ? (
-            <span>
-              Você ainda não postou nenhuma foto.
-              {
-                <Link to="/conta/postar">
-                  {" "}
-                  <TextUnderline>Postar Foto</TextUnderline>
-                </Link>
-              }
-            </span>
-          ) : (
-            "Acabaram as postagens"
-          )}
+          <span>
+            Você ainda não postou nenhuma foto.
+            {
+              <Link to="/conta/postar">
+                {" "}
+                <TextUnderline>Postar Foto</TextUnderline>
+              </Link>
+            }
+          </span>
         </S.PostsEndText>
-      )} */}
+      )}
 
-      {!infinite && <S.PostsEndText>Acabaram as fotos</S.PostsEndText>}
+      {dataLenght === 0 && pathname.includes("conta") === false && (
+        <S.PostsEndText>
+          Acabaram as postagens
+          <button onClick={() => window.scrollTo(0, 0)}>
+            <ArrowUp />
+          </button>
+        </S.PostsEndText>
+      )}
     </S.HomeFeedContainer>
   );
 };

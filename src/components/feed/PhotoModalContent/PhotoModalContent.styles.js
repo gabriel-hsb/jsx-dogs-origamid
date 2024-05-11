@@ -6,28 +6,27 @@ export const PhotoModalContentContainer = styled.div`
   border-radius: var(--radius);
   overflow: hidden;
   height: auto;
-  scroll-behavior: contain;
+  max-height: 90dvh;
 
+  scroll-behavior: contain;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -48%);
 
-  z-index: 999;
+  z-index: 99999 !important;
   background-color: #fff;
 
   img {
     object-fit: contain;
     max-width: 100%;
   }
+  max-height: calc(100vh - 4rem);
 
-  max-height: 90dvh;
-  min-width: 450px;
-
+  width: auto;
   @media (width <= 920px) {
-    grid-template-columns: 1fr;
-    max-height: calc(100vh - 4rem);
     overflow-y: auto;
+    grid-template-columns: minmax(20rem, 40rem);
 
     &::-webkit-scrollbar {
       display: none;

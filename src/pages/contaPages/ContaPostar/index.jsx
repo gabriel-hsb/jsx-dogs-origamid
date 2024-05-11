@@ -7,7 +7,6 @@ import { PHOTO_POST } from "../../../scripts/apiBackend";
 import TextInput from "../../../components/form/Input";
 import SimpleButton from "../../../components/form/SimpleButton";
 import DangerText from "../../../components/text/DangerText";
-import DisplayText from "../../../components/text/DisplayText";
 
 import * as S from "./ContaPostar.Styles";
 

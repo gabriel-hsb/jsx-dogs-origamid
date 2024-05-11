@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 
 export const LazyLoadingContainer = styled.div`
   display: grid;
+  justify-items: center;
 
   img {
     display: grid;
