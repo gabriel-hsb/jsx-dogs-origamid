@@ -7,6 +7,8 @@ import "dayjs/locale/pt-br";
 dayjs.extend(RelativeTime);
 dayjs.locale("pt-br");
 
+import useMedia from "../../../scripts/hooks/useMedia";
+
 import { UserContext } from "../../../UserContext";
 
 import * as S from "./PhotoComments.Styles";
@@ -24,7 +26,7 @@ const PhotoComments = (props) => {
           return (
             <li key={comment.comment_ID}>
               <S.Comment>
-                <Link to={`perfil/${comment.comment_author}`}>
+                <Link to={`/perfil/${comment.comment_author}`}>
                   <S.Author> {comment.comment_author} </S.Author>
                 </Link>
                 <S.Date>{dayjs(comment.comment_date).toNow(true)}</S.Date>
@@ -39,7 +41,7 @@ const PhotoComments = (props) => {
       ) : (
         <S.LoginToComment>
           <Link to={"/login"}>
-            <TextUnderline>Faça Login</TextUnderline>{" "}
+            <TextUnderline>Faça Login</TextUnderline>
           </Link>{" "}
           ou{" "}
           <Link to={"/login/criar"}>

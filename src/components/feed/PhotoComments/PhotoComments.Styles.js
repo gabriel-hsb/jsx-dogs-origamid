@@ -41,6 +41,9 @@ export const Date = styled.span`
 
 export const LoginToComment = styled.p`
   color: #989898 !important;
+  .ch-25 {
+    max-width: 25ch;
+  }
   a,
   span {
     font-weight: bold;

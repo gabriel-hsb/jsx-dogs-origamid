@@ -27,6 +27,7 @@ const FeedPhotosGrid = ({ setPhotoModal, userId, page, setInfinite }) => {
   }, [request, userId, page, setInfinite]);
 
   if (error) return <DangerText>{error}</DangerText>;
+  if (isFetching) return <LoadingAnimatedSvg />;
   if (data)
     return (
       <S.FeedPhotosGridContainer>

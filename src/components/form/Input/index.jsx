@@ -1,7 +1,6 @@
 import DangerText from "../../text/DangerText";
 import * as S from "./Input.Styles";
 
-// eslint-disable-next-line react/prop-types
 const TextInput = ({
   label,
   id,

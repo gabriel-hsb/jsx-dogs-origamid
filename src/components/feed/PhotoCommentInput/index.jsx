@@ -27,6 +27,7 @@ const PhotoCommentInput = ({ photoId, setComments }) => {
     if (response.ok) {
       console.log(json);
       console.log("deu certo");
+      // FIXME: post comment
       // setNewComment("");
       // setComments((comments) => [...comments, json]);
     }

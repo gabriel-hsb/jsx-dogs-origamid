@@ -80,10 +80,7 @@ const HomeFeed = ({ userId }) => {
         </S.PostsEndText>
       )} */}
 
-      {!infinite && (
-        <S.PostsEndText>Acabaram as fotos</S.PostsEndText>
-      )}
-
+      {!infinite && <S.PostsEndText>Acabaram as fotos</S.PostsEndText>}
     </S.HomeFeedContainer>
   );
 };

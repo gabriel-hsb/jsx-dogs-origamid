@@ -10,6 +10,7 @@ import HomeFeed from "./pages/HomeFeed";
 import Login from "./pages/loginPages/Login";
 import Conta from "./pages/contaPages/Conta";
 import Foto from "./pages/foto";
+import Perfil from "./pages/Perfil";
 import SrcNotFound from "./pages/SrcNotFound";
 
 import "./styles.css";
@@ -34,6 +35,7 @@ function App() {
               }
             />
             <Route path="foto/:id" element={<Foto />} />
+            <Route path="perfil/:user" element={<Perfil />} />
 
             <Route path="/*" element={<SrcNotFound />} />
           </Routes>

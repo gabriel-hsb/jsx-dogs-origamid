@@ -4,6 +4,7 @@ export const FeedPhotosGridContainer = styled.ul`
   grid-template-columns: repeat(3, 1fr);
   display: grid;
   gap: 1rem;
+  align-items: start;
 
   @media (width <= 768px) {
     grid-template-columns: 1fr 1fr;

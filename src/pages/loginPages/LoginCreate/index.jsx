@@ -22,8 +22,7 @@ const LoginCreate = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
-    
+ 
     const { url, options } = USER_POST({
       username: userName.value,
       email: userEmail.value,

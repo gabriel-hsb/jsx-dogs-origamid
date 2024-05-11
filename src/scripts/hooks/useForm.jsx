@@ -9,7 +9,7 @@ const types = {
 
   password: {
     regex: /^(?=.*[A-Z])(?=.*[0-9]).+$/,
-    message: "Sua senha deve conter um caracter maiúsculo e um dígito",
+    message: "Sua senha deve incluir um caracter maiúsculo e um dígito",
   },
   number: {
     regex: /^\d+([\.,]\d+)*$/,

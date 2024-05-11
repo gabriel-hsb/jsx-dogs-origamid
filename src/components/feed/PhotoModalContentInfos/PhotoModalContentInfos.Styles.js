@@ -36,8 +36,9 @@ export const PhotoDelete = styled.div`
 
     &:hover,
     &:focus {
-      box-shadow: 0px 0px 14px 2px rgba(255, 1, 1, 0.4);
+      box-shadow: 0px 0px 0px 5px rgba(255, 0, 0, 0.5);
       color: var(--danger-text);
+      background-color: transparent;
     }
 
     &:disabled {

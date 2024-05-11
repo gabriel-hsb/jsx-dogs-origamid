@@ -53,7 +53,7 @@ const PhotoModalContentInfos = ({ comments, photo }) => {
                 </button>
               </S.PhotoDelete>
             ) : (
-              <Link to={`perfil/${photo.author}`}>@{photo.author}</Link>
+              <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
             )}
             <span>{dayjs(photo.date).toNow(true)}</span>
           </div>
@@ -64,7 +64,7 @@ const PhotoModalContentInfos = ({ comments, photo }) => {
         {isAtFotoURL ? (
           <DisplayTextSquare>{photo.title}</DisplayTextSquare>
         ) : (
-          <Link to={`foto/${photo.id}`}>
+          <Link to={`/foto/${photo.id}`}>
             <DisplayTextSquare>{photo.title}</DisplayTextSquare>
           </Link>
         )}

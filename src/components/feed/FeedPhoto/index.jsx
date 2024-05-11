@@ -6,7 +6,6 @@ import ImageSkeleton from "../ImageSkeleton";
 import * as S from "./FeedPhoto.Styles";
 
 const FeedPhoto = ({ photo, setPhotoModal }) => {
-  console.log(photo);
   return (
     <S.FeedPhoto className="animeLeft" onClick={() => setPhotoModal(photo)}>
       <ImageSkeleton src={photo.src} alt={photo.title} />

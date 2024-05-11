@@ -7,9 +7,10 @@ import useFetch from "../../scripts/hooks/useFetch";
 
 import ImageSkeleton from "../../components/feed/ImageSkeleton";
 import PhotoModalContentInfos from "../../components/feed/PhotoModalContentInfos";
-import LoadingAnimatedSvg from '../../components/LoadingAnimatedSvg'
+import LoadingAnimatedSvg from "../../components/LoadingAnimatedSvg";
 
 import * as S from "./Foto.Styles";
+import DangerText from "../../components/text/DangerText";
 
 const Foto = () => {
   const { data, error, isFetching, request } = useFetch();
@@ -18,7 +19,10 @@ const Foto = () => {
   useEffect(() => {
     const { url, options } = PHOTO_GET(id);
     request(url, options);
-  }, [request]);
+  }, [request, id]);
+
+  if (error) return <DangerText>Erro. Por favor tente novamente.</DangerText>;
+  if (isFetching) return <LoadingAnimatedSvg />;
 
   return (
     <S.SinglePhotoContainer>
@@ -28,7 +32,6 @@ const Foto = () => {
           <PhotoModalContentInfos comments={data.comments} photo={data.photo} />
         </>
       )}
-      {isFetching && <LoadingAnimatedSvg/>}
     </S.SinglePhotoContainer>
   );
 };

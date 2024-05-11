@@ -17,9 +17,14 @@ export const FeedPhoto = styled.li`
     }
   }
 
-  img, div {
+  img,
+  div {
     grid-area: 1/1;
     object-fit: contain;
+
+  }
+
+  img {
     max-width: 100%;
   }
 
@@ -34,18 +39,17 @@ export const FeedPhoto = styled.li`
     gap: 0.3rem;
     flex-direction: column;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
 
     display: none;
     div {
       display: flex;
       align-items: center;
-      gap: .5rem;
+      gap: 0.5rem;
 
       svg {
         width: 20px;
         height: 20px;
-        
       }
     }
   }
