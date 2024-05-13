@@ -16,6 +16,7 @@ import Add from "../../../assets/images/icons/adicionar.svg?react";
 import LogOut from "../../../assets/images/icons/sair.svg?react";
 
 import * as S from "./Conta.Styles";
+import ContaStats from "../ContaStats";
 
 const Conta = () => {
   const [title, setTitle] = useState("");
@@ -95,8 +96,7 @@ const Conta = () => {
       </S.ContaContainer>
       <Routes>
         <Route path="" element={<Homefeed userId={userData.id} />} />
-
-        {/* <Route path="estatisticas" /> */}
+        <Route path="estatisticas" element={<ContaStats />} />
         <Route path="postar" element={<ContaPostar />} />
       </Routes>
     </>

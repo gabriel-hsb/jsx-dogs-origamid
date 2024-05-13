@@ -35,7 +35,7 @@ const LoginWelcome = () => {
       <form action="" onSubmit={handleSubmit} noValidate>
         <TextInput
           id={"user"}
-          label={"Nome de usuário"}
+          label={"Nome de usuário ou email"}
           type={"text"}
           required
           {...userName}

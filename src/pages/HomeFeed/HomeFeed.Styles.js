@@ -5,7 +5,7 @@ export const HomeFeedContainer = styled.section`
   max-width: 800px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 1rem 10px 0 10px;
+  padding: 1.5rem 10px calc(1.5rem - 10px) 10px;
   ul + ul {
     margin-top: 1rem;
   }
