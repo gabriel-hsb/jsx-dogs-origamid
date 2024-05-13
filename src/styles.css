@@ -129,3 +129,10 @@ nav .active > * {
 nav .active svg > * {
   fill: var(--primary-color);
 }
+
+/* stats graphs */
+
+.VictoryContainer {
+  height: initial !important;
+  width: initial;
+}

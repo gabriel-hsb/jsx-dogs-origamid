@@ -5,6 +5,7 @@ export const FeedPhotosGridContainer = styled.ul`
   display: grid;
   gap: 1rem;
   align-items: start;
+  place-content: center;
 
   @media (width <= 768px) {
     grid-template-columns: 1fr 1fr;
